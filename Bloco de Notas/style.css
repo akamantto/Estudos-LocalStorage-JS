@@ -1,11 +1,176 @@
-.row {
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        color: white;
+        background-color: #332b40;
+    }
+/* Organiza os dois blocos lado a lado */
+#container {
+    display: flex;
+    justify-content: space-between; /* Distribui espaço entre as colunas */
+    align-items: flex-start;
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#nav-bar-active-note{
+    background-color: #a87cc3;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding : 10px;
+}
+
+#save-note{
+    background-color: #840ece; /* Azul padrão */
+    color: white; /* Texto branco */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#save-note:hover {
+    background-color: #a617ff; /* Azul mais escuro no hover */
+    transform: scale(1.05); /* Efeito de leve aumento */
+}
+
+#save-note:active {
+    background-color: #004085; /* Tom ainda mais escuro quando pressionado */
+    transform: scale(0.98); /* Leve redução ao clicar */
+}
+
+
+/* Área da nota ativa (Esquerda) */
+#container-active-note {
+    flex: 2; /* Ocupa mais espaço */
+    border-radius : 13px;
+    border: 3px solid #ccc;
+    padding-bottom: 10px;
+    height: 100%;
+    margin-right: 100px;
+}
+
+/* Notas Criadas (Direita) */
+#container-created-notes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1; /* Ocupa mais espaço */
+    border-radius : 13px;
+    border: 3px solid #ccc;
+    padding: 20px;
+    height: 100%;
+    margin-right: 100px;
+}
+
+#clear-all-created-notes {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+}
+
+#clear-notes {
+    background-color: #d32f2f; /* Vermelho escuro */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#clear-notes:hover {
+    background-color: #b71c1c; /* Vermelho mais escuro no hover */
+    transform: scale(1.05);
+}
+
+#clear-notes:active {
+    background-color: #9a0007; /* Vermelho ainda mais escuro ao clicar */
+    transform: scale(0.98);
+}
+
+#active-note-content {
+    height: calc(100% - 50px); /* Ajusta para ocupar o espaço abaixo da navbar */
     display: flex;
 }
 
-.col-md-8 {
-    flex: 2;
+#note-input {
+    width: 100%;
+    height: 100%;
+    font-size: 25px;
+    resize: none;
+    outline: none;
+    background-color: transparent;
+    color: whitesmoke;
 }
 
-.col-md-4 {
-    flex: 1;
+.created-note {
+    width: 100%;
+    background-color: #483d63; /* Roxo escuro para combinar com o tema */
+    color: white;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+.created-note:hover {
+    background-color: #5a4d7a; /* Cor mais clara no hover */
+    transform: scale(1.02);
+}
+
+.content-created-note {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background-color: rgba(255, 255,);
+}
+
+.remove-created-note {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.remove-created-note:hover {
+    background-color: rgba(255, 0, 0, 0.7); /* Vermelho semi-transparente no hover */
+    transform: scale(1.1);
+}
+
+.remove-created-note:active {
+    background-color: rgba(200, 0, 0, 0.9); /* Tom mais escuro quando clicado */
+    transform: scale(0.95);
 }
