@@ -174,3 +174,25 @@
     background-color: rgba(200, 0, 0, 0.9); /* Tom mais escuro quando clicado */
     transform: scale(0.95);
 }
+
+#title-active-note {
+    width: fit-content;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: transparent;
+    color: whitesmoke;
+    border: none;
+    outline: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #a87cc3; /* Linha sutil abaixo do título */
+}
+
+#title-active-note::placeholder {
+    color: rgba(255, 255, 255, 0.5); /* Placeholder mais discreto */
+}
+
+#title-active-note:focus {
+    border-bottom: 2px solid #840ece;
+}
+
